@@ -1,0 +1,56 @@
+- name: Install ruby
+  apt: name={{item}} state=latest
+  with_items:
+    - ruby
+  tags:
+    - packages
+    - ruby
+
+- name: Add keys for RVM
+  shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+  sudo: yes
+
+- name: Install RVM
+  shell: curl -L get.rvm.io | bash -s stable
+  tags:
+    - packages
+    - ruby
+
+- name: Reload RVM
+  shell: /usr/local/rvm/bin/rvm reload
+  tags:
+    - packages
+    - ruby
+
+- name: Fix RVM terminal integration
+  shell: /usr/local/rvm/bin/rvm get stable --auto-dotfiles
+  tags:
+    - packages
+    - ruby
+    - rvm
+
+- name: Install Ruby on RVM
+  shell: /usr/local/rvm/bin/rvm install {{rvm.ruby_version}}
+  tags:
+    - packages
+    - ruby
+
+- name: Use ruby as default
+  shell: /usr/local/rvm/bin/rvm alias create default {{rvm.ruby_version}}
+  tags:
+    - packages
+    - ruby
+    - rvmuse
+
+- name: Permission to vagrant
+  user: name=vagrant groups=rvm append=yes
+  tags:
+    - vagrant_rvm
+
+- name: Install bundle gem
+  gem: >
+    name=bundler
+    user_install=no
+    state=latest
+  tags:
+    - ruby

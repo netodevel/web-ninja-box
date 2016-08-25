@@ -1,0 +1,8 @@
+---
+- name: Configure web ninja box
+  hosts: all
+  sudo: true
+  roles:
+    - { role: ruby, tags: ['ruby'] }
+#    - { role: postgresql, tags: ['postgresql'] }
+    
