@@ -1,0 +1,9 @@
+- name: Install nodejs!
+  apt: pkg=nodejs state=latest update_cache=true
+
+- name: Install nodejs!
+  apt: pkg=npm state=latest update_cache=true
+
+- name: Install Angular CLI
+  shell: npm install -g angular-cli
+
