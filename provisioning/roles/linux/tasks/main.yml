@@ -1,0 +1,31 @@
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Install the kitchen sink
+  action: apt pkg={{item}} state=installed update_cache=true
+  sudo: yes
+  with_items:
+    - build-essential
+    - curl
+    - git-core
+    - git
+    - libxml2-dev
+    - libffi-dev
+    - libyaml-dev
+    - libssl-dev
+    - libsqlite3-dev
+    - libgdbm-dev
+    - libncurses5-dev
+    - libreadline6-dev
+    - libtool
+    - libyaml-dev
+    - nfs-common 
+    - pkg-config
+    - zlib1g-dev
+    - htop
+    - iftop
+    - python-pycurl 
+    - python-software-properties 
+    - unattended-upgrades
+

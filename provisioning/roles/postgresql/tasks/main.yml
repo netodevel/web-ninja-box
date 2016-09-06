@@ -1,0 +1,8 @@
+- name: install postgres and pgadmin
+  shell: sudo apt-get install postgresql pgadmin3 
+
+- name: access admin postgres user
+  shell: su postgres -c psql postgres 
+
+- name: alter user password
+  shell: ALTER USER postgres WITH PASSWORD 'root';

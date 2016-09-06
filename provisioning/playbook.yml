@@ -4,6 +4,9 @@
   sudo: true
   roles:
     - { role: ruby, tags: ['ruby'] }
+    - { role: linux, tags: ['linux'] }
+    - { role: nodejs, tags: ['nodejs'] }
     - { role: angular, tags: ['angular'] }
-#    - { role: postgresql, tags: ['postgresql'] }
+    - { role: rails, tags: ['rails'] }
+    - { role: postgresql, tags: ['postgresql'] }
     
