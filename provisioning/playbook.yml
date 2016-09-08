@@ -6,7 +6,7 @@
     - { role: ruby, tags: ['ruby'] }
     - { role: linux, tags: ['linux'] }
     - { role: nodejs, tags: ['nodejs'] }
-    - { role: angular, tags: ['angular'] }
-    - { role: rails, tags: ['rails'] }
-    - { role: postgresql, tags: ['postgresql'] }
+#    - { role: angular, tags: ['angular'] }
+#    - { role: rails, tags: ['rails'] }
+#    - { role: postgresql, tags: ['postgresql'] }
     

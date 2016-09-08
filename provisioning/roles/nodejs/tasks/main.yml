@@ -1,0 +1,9 @@
+- name: "Get package manager"
+  shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+- name: "Install nodejs"
+  shell: apt-get install -y nodejs
+
+- name: "Install build tools"
+  shell: apt-get install -y build-essential
+

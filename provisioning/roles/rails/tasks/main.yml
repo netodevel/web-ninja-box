@@ -1,6 +1,3 @@
-- name: "install ruby 2.2.5"
-  shell: rvm install ruby-2.2.5
-  
 - name: "install bundler"
   shell: gem install bundler
 
